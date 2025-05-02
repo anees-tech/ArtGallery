@@ -5,28 +5,70 @@ import { Link } from "react-router-dom"
 import PaintingCard from "../components/PaintingCard"
 import "./Home.css"
 
+// Dummy featured paintings data
+const dummyFeaturedPaintings = [
+  {
+    _id: "1",
+    title: "Autumn Landscape",
+    artist: {
+      _id: "a1", 
+      name: "Emma Johnson"
+    },
+    price: 1200,
+    medium: "Oil on Canvas",
+    imageUrl: "/images/paintings/autumn-landscape.jpg",
+    featured: true
+  },
+  {
+    _id: "2",
+    title: "Abstract Harmony",
+    artist: {
+      _id: "a2", 
+      name: "Marcus Chen"
+    },
+    price: 950,
+    medium: "Acrylic on Canvas",
+    imageUrl: "/images/paintings/abstract-harmony.jpg",
+    featured: true
+  },
+  {
+    _id: "3",
+    title: "Coastal Dreams",
+    artist: {
+      _id: "a3", 
+      name: "Sarah Wilson"
+    },
+    price: 1450,
+    medium: "Oil on Canvas",
+    imageUrl: "/images/paintings/coastal-dreams.jpg",
+    featured: true
+  },
+  {
+    _id: "4",
+    title: "Urban Nights",
+    artist: {
+      _id: "a4", 
+      name: "David Miller"
+    },
+    price: 1100,
+    medium: "Mixed Media",
+    imageUrl: "/images/paintings/urban-nights.jpg",
+    featured: true
+  }
+];
+
 const Home = () => {
   const [featuredPaintings, setFeaturedPaintings] = useState([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
 
   useEffect(() => {
-    const fetchFeaturedPaintings = async () => {
-      try {
-        const response = await fetch("http://localhost:5000/api/paintings/featured")
-        if (!response.ok) {
-          throw new Error("Failed to fetch featured paintings")
-        }
-        const data = await response.json()
-        setFeaturedPaintings(data)
-        setLoading(false)
-      } catch (err) {
-        setError(err.message)
-        setLoading(false)
-      }
-    }
+    // Simulate API call with a timeout
+    const timer = setTimeout(() => {
+      setFeaturedPaintings(dummyFeaturedPaintings);
+      setLoading(false);
+    }, 500); // 500ms delay to simulate loading
 
-    fetchFeaturedPaintings()
+    return () => clearTimeout(timer);
   }, [])
 
   return (
@@ -57,8 +99,6 @@ const Home = () => {
 
           {loading ? (
             <div className="loading">Loading featured paintings...</div>
-          ) : error ? (
-            <div className="error">{error}</div>
           ) : (
             <div className="featured-grid">
               {featuredPaintings.map((painting) => (
