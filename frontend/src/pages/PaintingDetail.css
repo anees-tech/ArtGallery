@@ -1,0 +1,191 @@
+.painting-detail-page {
+  padding: 40px 0;
+}
+
+.painting-detail-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.painting-detail-image {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.painting-detail-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.painting-detail-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.painting-detail-artist {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.painting-detail-artist span {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.painting-detail-meta {
+  margin-bottom: 20px;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 15px 0;
+}
+
+.meta-item {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.meta-label {
+  font-weight: 600;
+  width: 100px;
+}
+
+.painting-detail-price {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.price-label {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.price-value {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.painting-detail-description {
+  margin-bottom: 30px;
+}
+
+.painting-detail-description h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.painting-detail-description p {
+  line-height: 1.6;
+}
+
+.painting-detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.quantity-btn {
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quantity-value {
+  width: 40px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.add-to-cart-btn {
+  flex: 1;
+  padding: 12px 20px;
+}
+
+.out-of-stock {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--error-color);
+  padding: 15px;
+  border-radius: 4px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.artist-info-section {
+  margin-top: 60px;
+}
+
+.artist-info-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.artist-info-container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 30px;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.artist-image {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.artist-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.artist-bio h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.artist-bio p {
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .painting-detail-container {
+    grid-template-columns: 1fr;
+  }
+
+  .artist-info-container {
+    grid-template-columns: 1fr;
+  }
+
+  .artist-image {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}

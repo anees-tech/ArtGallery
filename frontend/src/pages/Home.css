@@ -1,0 +1,149 @@
+.hero-section {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  padding: 80px 0;
+  position: relative;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/placeholder.svg?height=800&width=1200");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: var(--light-text);
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.featured-section {
+  padding: 80px 0;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.view-all-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.about-preview-section {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+}
+
+.about-preview-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-preview-text p {
+  margin-bottom: 30px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.about-preview-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-section {
+  background-color: var(--accent-color);
+  color: var(--light-text);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.cta-subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  background-color: var(--light-text);
+  color: var(--accent-color);
+  font-weight: 600;
+  padding: 12px 30px;
+  font-size: 18px;
+}
+
+.cta-button:hover {
+  background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .about-preview-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-preview-image {
+    order: -1;
+  }
+
+  .cta-title {
+    font-size: 28px;
+  }
+}
